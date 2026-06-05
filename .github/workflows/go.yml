@@ -34,6 +34,17 @@ jobs:
     - name: Create-DB
       run: docker compose up -d
 
+    - name: Wait-For-DB
+      run: |
+        for i in {1..30}; do
+          if docker compose exec -T postgres pg_isready -U root -d root; then
+            exit 0
+          fi
+          sleep 1
+        done
+        echo "Database did not become ready in time"
+        exit 1
+
     - name: Test
       run: go test -v main_test.go 
       
