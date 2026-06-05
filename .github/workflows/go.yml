@@ -2,9 +2,9 @@ name: Go
 
 on:
   push:
-    branches: [ Aula_1 ]
+    branches: [ '*' ]
   pull_request:
-    branches: [ Aula_1 ]
+    branches: [ '*' ]
 
 jobs:
 
@@ -41,3 +41,13 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build
       run: go build -v main.go
+
+  deploy_EC2:
+    needs: build
+    uses: ./.github/workflows/EC2.yml
+    secrets: inherit
+    
+
+
+
+      
