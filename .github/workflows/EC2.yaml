@@ -36,4 +36,6 @@ jobs:
             export PASSWORD=123456789
             export DBNAME=root
             export DBPORT=5432
-            export PORT=8080
+            export PORT=8000
+            chmod +x main
+            nohup ./main &
