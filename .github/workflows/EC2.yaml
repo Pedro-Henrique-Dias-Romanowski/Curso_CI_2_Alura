@@ -36,4 +36,4 @@ jobs:
             export PASSWORD=123456789
             export DBNAME=root
             export DBPORT=5432
-            export PORT=8000
+            export PORT=8080
