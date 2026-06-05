@@ -11,10 +11,10 @@ jobs:
   test:
     runs-on: ${{ matrix.os }}
     env:
-      HOST: localhost
+      HOST: apialurago.cdgosc28s1vn.us-east-2.rds.amazonaws.com
       DBPORT: 5432
-      USER: root
-      PASSWORD: root
+      USER: postgres
+      PASSWORD: 123456789
       DBNAME: root
     strategy:
       matrix:
