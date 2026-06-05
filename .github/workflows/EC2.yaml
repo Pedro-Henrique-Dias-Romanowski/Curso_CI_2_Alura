@@ -22,3 +22,17 @@ jobs:
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: /home/${{ secrets.REMOTE_USER }}
           EXCLUDE: "postgres-data"
+          
+      - name: Executa comandos SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST}}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: 22
+          script: |
+            export HOST=apialurago.cdgosc28s1vn.us-east-2.rds.amazonaws.com
+            export USER=postgres
+            export PASSWORD=123456789
+            export DBNAME=root
+            export PORT=5432
