@@ -44,7 +44,7 @@ jobs:
 
   deploy_EC2:
     needs: build
-    uses: ./.github/workflows/EC2.yml
+    uses: ./.github/workflows/EC2.yaml
     secrets: inherit
     
 
