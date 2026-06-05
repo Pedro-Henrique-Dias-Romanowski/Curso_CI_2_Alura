@@ -35,4 +35,5 @@ jobs:
             export USER=postgres
             export PASSWORD=123456789
             export DBNAME=root
-            export PORT=5432
+            export DBPORT=5432
+            export PORT=8000
